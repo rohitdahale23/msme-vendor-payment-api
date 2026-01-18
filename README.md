@@ -429,15 +429,15 @@ JWT_SECRET=<strong-secret-key>
 
 ## 🎯 Key Business Rules Implemented
 
-1. ✅ Vendor name and email must be unique
-2. ✅ Cannot create PO for inactive vendor
-3. ✅ PO total auto-calculated from items
-4. ✅ Due date auto-calculated from payment terms
-5. ✅ Status transitions validated
-6. ✅ Payment cannot exceed outstanding amount
-7. ✅ PO status auto-updates on payment
-8. ✅ Payment amount must be positive
-9. ✅ Soft delete with status recalculation
+1. Vendor name and email must be unique
+2. Cannot create PO for inactive vendor
+3. PO total auto-calculated from items
+4. Due date auto-calculated from payment terms
+5. Status transitions validated
+6. Payment cannot exceed outstanding amount
+7. PO status auto-updates on payment
+8. Payment amount must be positive
+9. Soft delete with status recalculation
 
 ## 📝 Notes
 

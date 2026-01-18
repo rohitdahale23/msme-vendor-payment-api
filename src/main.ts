@@ -6,6 +6,9 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // ✅ Required for Render / reverse proxies
+  app.set('trust proxy', 1);
+
   // Enable CORS
   app.enableCors();
 
@@ -24,7 +27,9 @@ async function bootstrap() {
   // Swagger configuration
   const config = new DocumentBuilder()
     .setTitle('MSME Vendor Payment Tracking API')
-    .setDescription('API for managing vendors, purchase orders, and payments for MSMEs')
+    .setDescription(
+      'API for managing vendors, purchase orders, and payments for MSMEs',
+    )
     .setVersion('1.0')
     .addBearerAuth()
     .addTag('Authentication', 'Authentication endpoints')
@@ -39,11 +44,11 @@ async function bootstrap() {
 
   const port = process.env.PORT || 3000;
   await app.listen(port);
-  
+
   console.log(`
-    🚀 Application is running on: http://localhost:${port}
-    📚 API Documentation: http://localhost:${port}/api/docs
-  `);
+🚀 Application is running on port: ${port}
+📚 Swagger Docs: /api/docs
+`);
 }
 
 bootstrap();
